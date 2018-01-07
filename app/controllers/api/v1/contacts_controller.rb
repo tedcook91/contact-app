@@ -2,6 +2,7 @@ class Api::V1::ContactsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create, :update, :destroy]
   def index
     @contacts = Contact.all
+    render json: @contacts
   end
 
   def new
@@ -9,9 +10,10 @@ class Api::V1::ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(contact_params)
-
-    @contact.save
+    body = JSON.parse(request.body.read)
+    @contact = Contact.new(body)
+    @contact.save!
+    render json: @contacts
   end
 
   # def destroy
