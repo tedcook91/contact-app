@@ -16,9 +16,10 @@ class Api::V1::ContactsController < ApplicationController
     render json: @contacts
   end
 
-  # def destroy
-  #   @contact.destroy
-  # end
+  def destroy
+    @contact = Contact.find_by(id: params[:id])
+    @contact.destroy
+  end
 
   def contact_params
     params.require(:contact).permit(:firstName, :lastName, :emailAddress, :phoneNumber, :companyName)
