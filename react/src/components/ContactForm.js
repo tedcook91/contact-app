@@ -37,11 +37,11 @@ class ContactForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const formPayload = {
-      firstName:"",
-      lastName:"",
-      emailAddress:"",
-      phoneNumber:"",
-      companyName:""
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      emailAddress: this.state.emailAddress,
+      phoneNumber: this.state.phoneNumber,
+      companyName: this.state.companyName
     }
     this.props.addContact(formPayload)
     this.handleClearForm(event);
