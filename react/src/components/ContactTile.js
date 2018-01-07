@@ -2,6 +2,7 @@ import React from 'react';
 
 const ContactTile = props => {
 
+
   return(
     <div>
       <ul>
@@ -10,6 +11,7 @@ const ContactTile = props => {
         <li>{props.emailAddress}</li>
         <li>{props.phoneNumber}</li>
         <li>{props.companyName}</li>
+        <button onClick={this.props.deleteContact}>Delete</button>
       </ul>
     </div>
   )
