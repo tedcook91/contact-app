@@ -50,41 +50,43 @@ class ContactForm extends Component {
   render() {
     return(
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <TextInputField
-            content={this.state.firstName}
-            label="First Name"
-            name="firstName"
-            handleChange={this.handleChange}
-          />
-          <TextInputField
-            content={this.state.lastName}
-            label="Last Name"
-            name="lastName"
-            handleChange={this.handleChange}
-          />
-          <TextInputField
-            content={this.state.emailAddress}
-            label="Email Address"
-            name="emailAddress"
-            handleChange={this.handleChange}
-          />
-          <TextInputField
-            content={this.state.phoneNumber}
-            label="Phone Number"
-            name="phoneNumber"
-            handleChange={this.handleChange}
-          />
-          <TextInputField
-            content={this.state.companyName}
-            label="Company Name"
-            name="companyName"
-            handleChange={this.handleChange}
-          />
-          <div>
-            <input className="button" type="submit" value="Submit" />
-          </div>
-        </form>
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <TextInputField
+              content={this.state.firstName}
+              label="First Name"
+              name="firstName"
+              handleChange={this.handleChange}
+            />
+            <TextInputField
+              content={this.state.lastName}
+              label="Last Name"
+              name="lastName"
+              handleChange={this.handleChange}
+            />
+            <TextInputField
+              content={this.state.emailAddress}
+              label="Email Address"
+              name="emailAddress"
+              handleChange={this.handleChange}
+            />
+            <TextInputField
+              content={this.state.phoneNumber}
+              label="Phone Number"
+              name="phoneNumber"
+              handleChange={this.handleChange}
+            />
+            <TextInputField
+              content={this.state.companyName}
+              label="Company Name"
+              name="companyName"
+              handleChange={this.handleChange}
+            />
+            <div>
+              <input className="button" type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
       </div>
     )
   }

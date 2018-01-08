@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ContactTile from '../components/ContactTile';
 import ContactForm from '../components/ContactForm';
 
+
 class ContactsContainer extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +12,6 @@ class ContactsContainer extends Component {
     this.fetchContacts = this.fetchContacts.bind(this)
     this.addContact = this.addContact.bind(this)
     this.deleteContact = this.deleteContact.bind(this)
-
   }
 
   componentDidMount() {
@@ -48,8 +48,8 @@ class ContactsContainer extends Component {
   }
 
 
-
   render() {
+
     let deleteContact = (id) => this.deleteContact(id)
     let addContact = (formPayload) => this.addContact(formPayload)
     let contacts = this.state.contacts.map(contact =>
@@ -63,16 +63,23 @@ class ContactsContainer extends Component {
         companyName={contact.companyName}
         deleteContact={() => this.deleteContact(contact.id)}
       />
-
     )
 
-// console.log(selectedId)
     return(
       <div>
         <div>
           <h2>Contact List</h2>
+          <table className="contactHeader">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Phone Number</th>
+            <th>Company Name</th>
+            <tbody>
+              {contacts}
+            </tbody>
+          </table>
         </div>
-          {contacts}
         <div>
           <ContactForm addContact={addContact} />
         </div>

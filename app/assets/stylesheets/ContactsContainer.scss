@@ -1,0 +1,23 @@
+ul li {
+  list-style-type: none;
+  float: left;
+}
+
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  // border: 1px solid grey
+}
+
+.contactHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 140px;
+}
+
+
+form {
+  height: 16px;
+  width: 200px;
+  margin-left: 40px;
+}

@@ -4,15 +4,17 @@ import React from 'react';
 
 
     return(
-      <div>
-        <ul>
-          <li>{props.firstName}</li>
-          <li>{props.lastName}</li>
-          <li>{props.emailAddress}</li>
-          <li>{props.phoneNumber}</li>
-          <li>{props.companyName}</li>
-          <button onClick={props.deleteContact}>Delete</button>
-        </ul>
+      <div className="contacts">
+        <table>
+          <tr>
+            <td>{props.firstName}</td>
+            <td>{props.lastName}</td>
+            <td>{props.emailAddress}</td>
+            <td>{props.phoneNumber}</td>
+            <td>{props.companyName}</td>
+            <input className="button" onClick={props.deleteContact} value="Delete"/>
+          </tr>
+        </table>
       </div>
     )
   }
