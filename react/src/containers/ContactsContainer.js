@@ -6,11 +6,12 @@ class ContactsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      contacts: []
+      contacts: [],
     }
     this.fetchContacts = this.fetchContacts.bind(this)
     this.addContact = this.addContact.bind(this)
     this.deleteContact = this.deleteContact.bind(this)
+
   }
 
   componentDidMount() {
@@ -38,17 +39,19 @@ class ContactsContainer extends Component {
   }
 
   deleteContact(id) {
-    fetch(`/api/v1/contacts`, {
-      method: "DELETE",
-    }).then(() => {
+    fetch(`/api/v1/contacts/${id}`, {
+      method: 'DELETE'
+    })
+    .then(() => {
       this.fetchContacts()
     })
   }
 
 
+
   render() {
-    let addContact = (formPayload) => this.addContact(formPayload)
     let deleteContact = (id) => this.deleteContact(id)
+    let addContact = (formPayload) => this.addContact(formPayload)
     let contacts = this.state.contacts.map(contact =>
       <ContactTile
         id={contact.id}
@@ -60,7 +63,10 @@ class ContactsContainer extends Component {
         companyName={contact.companyName}
         deleteContact={() => this.deleteContact(contact.id)}
       />
+
     )
+
+// console.log(selectedId)
     return(
       <div>
         <div>
