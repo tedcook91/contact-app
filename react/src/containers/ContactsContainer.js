@@ -12,6 +12,8 @@ class ContactsContainer extends Component {
     this.fetchContacts = this.fetchContacts.bind(this)
     this.addContact = this.addContact.bind(this)
     this.deleteContact = this.deleteContact.bind(this)
+    this.sortContacts = this.sortContacts.bind(this)
+    this.filterContacts = this.filterContacts.bind(this)
   }
 
   componentDidMount() {
@@ -47,9 +49,37 @@ class ContactsContainer extends Component {
     })
   }
 
+  sortContacts() {
+     function compare(a,b) {
+       const emailA = a.emailAddress.toUpperCase();
+       const emailB = b.emailAddress.toUpperCase();
+       let comparison = 0;
+       if (emailA > emailB) {
+         comparison = 1;
+       } else if (emailA < emailB) {
+         comparison = -1;
+       }
+       debugger
+       return comparison;
+     }
+     this.setState({contacts: this.state.contacts.sort(compare)});
+   }
+
+   filterContacts() {
+     function filterEmail(contact) {
+       const email = contact.emailAddress.toLowerCase();
+       if (email.includes(".com")) {
+      }
+      return email;
+    }
+    this.setState({contacts: this.state.contacts.filter(filterEmail)})
+   }
+
+
 
   render() {
-
+    let sortContacts = () => this.sortContacts()
+    let filterContacts = () => this.filterContacts()
     let deleteContact = (id) => this.deleteContact(id)
     let addContact = (formPayload) => this.addContact(formPayload)
     let contacts = this.state.contacts.map(contact =>
@@ -68,18 +98,23 @@ class ContactsContainer extends Component {
     return(
       <div>
         <div>
-          <h2>Contact List</h2>
-          <table className="contactHeader">
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email Address</th>
-            <th>Phone Number</th>
-            <th>Company Name</th>
-            <tbody>
-              {contacts}
-            </tbody>
-          </table>
+
+          </div>
+        <div>
+          <div className="controls">
+            <h2>Contact List</h2>
+            <input onClick={sortContacts} value="Sort" className="button" />
+            <input onClick={filterContacts} value="Filter" className="button" />
+          </div>
+          <ul className="contactHeader">
+            <li>First Name</li>
+            <li>Last Name</li>
+            <li>Email Address</li>
+            <li>Phone Number</li>
+            <li>Company Name</li>
+          </ul>
         </div>
+          {contacts}
         <div>
           <ContactForm addContact={addContact} />
         </div>
