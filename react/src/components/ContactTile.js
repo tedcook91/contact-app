@@ -11,7 +11,7 @@ import React from 'react';
             <li>{props.emailAddress}</li>
             <li>{props.phoneNumber}</li>
             <li>{props.companyName}</li>
-            <input className="button" onClick={props.deleteContact} value="Delete"/>
+            <input className="delete" onClick={props.deleteContact} value="Delete"/>
         </ul>
       </div>
     )
