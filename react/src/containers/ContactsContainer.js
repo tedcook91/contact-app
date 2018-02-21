@@ -59,21 +59,21 @@ class ContactsContainer extends Component {
        } else if (emailA < emailB) {
          comparison = -1;
        }
-       debugger
        return comparison;
      }
      this.setState({contacts: this.state.contacts.sort(compare)});
    }
 
    filterContacts() {
-     function filterEmail(contact) {
-       const email = contact.emailAddress.toLowerCase();
-       if (email.includes(".com")) {
-      }
-      return email;
+     let allContacts = this.state.contacts
+     function filtered(contact) {
+       for (var i = 0; i < allContacts.length; i++) {
+      if (allContacts[contact].emailAddress.includes('.com'));
+      return contact;
     }
-    this.setState({contacts: this.state.contacts.filter(filterEmail)})
-   }
+  }
+   this.setState({contacts: allContacts.filter(filtered)});
+ }
 
 
 
