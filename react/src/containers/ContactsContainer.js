@@ -64,15 +64,22 @@ class ContactsContainer extends Component {
      this.setState({contacts: this.state.contacts.sort(compare)});
    }
 
-   filterContacts() {
-     let allContacts = this.state.contacts
-     function filtered(contact) {
-       for (var i = 0; i < allContacts.length; i++) {
-      if (allContacts[contact].emailAddress.includes('.com'));
-      return contact;
-    }
-  }
-   this.setState({contacts: allContacts.filter(filtered)});
+ //   filterContacts() {
+ //     let allContacts = this.state.contacts
+ //     function filtered(allContacts) {
+ //       for (var i = 0; i < allContacts.length; i++) {
+ //         if (allContacts[i].emailAddress.includes('.com'));
+ //         return i;
+ //    }
+ //  }
+ //   this.setState({contacts: allContacts.filter(filtered)});
+ // }
+
+ filterContacts() {
+   let allContacts = this.state.contacts.filter((contact) => {
+     return contact.emailAddress.includes('.com')
+   });
+   this.setState({contacts: allContacts})
  }
 
 
