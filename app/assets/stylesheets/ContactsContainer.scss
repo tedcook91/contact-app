@@ -1,4 +1,9 @@
-ul li {
+// ul li {
+//   list-style-type: none;
+//   float: left;
+// }
+
+tr {
   list-style-type: none;
   float: left;
 }
@@ -38,7 +43,10 @@ form {
     height: 35px;
     width: 85px;
     position: absolute;
-    margin-right: 25px;
+    left: 85%;
+
+
+
 }
 
 .delete:hover {

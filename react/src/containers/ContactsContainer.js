@@ -75,6 +75,7 @@ class ContactsContainer extends Component {
 
 
   render() {
+    debugger
     let sortContacts = () => this.sortContacts()
     let filterContacts = () => this.filterContacts()
     let deleteContact = (id) => this.deleteContact(id)
@@ -94,27 +95,29 @@ class ContactsContainer extends Component {
 
     return(
       <div>
-        <div>
-
-          </div>
-        <div>
           <div className="controls">
             <h2>Contact List</h2>
             <input onClick={sortContacts} value="Sort" className="button" />
             <input onClick={filterContacts} value="Filter" className="button" />
           </div>
-          <ul className="contactHeader">
-            <li>First Name</li>
-            <li>Last Name</li>
-            <li>Email Address</li>
-            <li>Phone Number</li>
-            <li>Company Name</li>
-          </ul>
-        </div>
+          <table>
+            <thead>
+          <tr className="contactHeader">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Phone Number</th>
+            <th>Company Name</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr>
           {contacts}
-        <div>
+        </tr>
+        </tbody>
+      </table>
           <ContactForm addContact={addContact} />
-        </div>
+
       </div>
     )
   }
