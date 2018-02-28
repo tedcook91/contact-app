@@ -2,22 +2,27 @@
 //   list-style-type: none;
 //   float: left;
 // }
-
+//
 tr {
   list-style-type: none;
   float: left;
+  display: inline-block;
+  width: 90%;
+  justify-content: space-between;
 }
 
 .contacts {
-  display: flex;
+  display: block;
   justify-content: space-between;
   border: yellow solid 2px;
 }
 
 .contactHeader {
-  display: flex;
-  justify-content: space-between;
+  float: left;
   margin-right: 140px;
+  display: inline-block;
+  width: 90%;
+  justify-content: space-between;
 }
 
 .controls {
@@ -32,33 +37,30 @@ form {
 }
 
 .delete {
-    background-color: #b22323;
-    border: none;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    height: 35px;
-    width: 85px;
-    position: absolute;
-    left: 85%;
-
-
-
+  background-color: #b22323;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 35px;
+  width: 85px;
+  position: absolute;
+  left: 85%;
 }
 
 .delete:hover {
-    background-color: #7f1919;
-    border: none;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    height: 35px;
-    width: 85px;
-    cursor: pointer;
+  background-color: #7f1919;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 35px;
+  width: 85px;
+  cursor: pointer;
 }
