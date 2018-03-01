@@ -1,66 +1,47 @@
-// ul li {
-//   list-style-type: none;
-//   float: left;
-// }
-//
-tr {
-  list-style-type: none;
-  float: left;
-  display: inline-block;
-  width: 90%;
-  justify-content: space-between;
-}
-
-.contacts {
-  display: block;
-  justify-content: space-between;
-  border: yellow solid 2px;
-}
-
-.contactHeader {
-  float: left;
-  margin-right: 140px;
-  display: inline-block;
-  width: 90%;
-  justify-content: space-between;
+h2 {
+  margin-left: 20px;
 }
 
 .controls {
   display: flex;
-  justify-content: space-between;
+  margin-left: 20px;
+  justify-content: space-around;
+  width: 47.5%;
 }
+
+table {
+  width: 95%;
+  border-collapse: collapse;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+}
+
+td, th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
 
 form {
   height: 16px;
   width: 200px;
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 .delete {
   background-color: #b22323;
-  border: none;
   color: white;
-  padding: 10px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
-  height: 35px;
-  width: 85px;
-  position: absolute;
-  left: 85%;
 }
 
 .delete:hover {
   background-color: #7f1919;
-  border: none;
   color: white;
-  padding: 10px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  height: 35px;
-  width: 85px;
   cursor: pointer;
 }
