@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'static_pages#index'
+  root 'contacts#index'
 
   namespace "api" do
     namespace "v1" do
