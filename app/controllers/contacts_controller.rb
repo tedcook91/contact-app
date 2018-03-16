@@ -1,3 +1,2 @@
-# class ContactsController < ApplicationController
-#
-# end
+class ContactsController < ApplicationController
+end
